@@ -37,6 +37,7 @@ def main():
         return
 
     pizza = pizza_choices[pizza_choice]
+    pizza_name = pizza.__class__.__name__  # Save pizza name for order summary
 
     selected_sauces = []
     while True:
@@ -60,7 +61,7 @@ def main():
     # Clearing the Screen
     os.system('cls')
     # Print order summary and ask for confirmation
-    print("\nSelected pizza: " + pizza.__class__.__name__)
+    print("\nSelected pizza: " + pizza_name)
     print("Selected sauces: " + ', '.join(selected_sauces))
     print("\nTotal cost: $" + str(total_cost))
 
